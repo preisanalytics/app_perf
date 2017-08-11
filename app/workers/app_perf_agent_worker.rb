@@ -62,7 +62,7 @@ class AppPerfAgentWorker < ActiveJob::Base
 
         # TODO: Move this to a job/cron to run for all
         # apps on a regular basis.
-        perform_data_retention_cleanup
+        #perform_data_retention_cleanup
       end
     end
   end
