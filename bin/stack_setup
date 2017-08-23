@@ -1,0 +1,21 @@
+#! /usr/bin/env ruby
+
+system 'bundle exec rake db:create'
+system 'bundle exec rake db:migrate'
+
+require_relative '../config/environment'
+
+exit unless User.count == 0
+
+user = User.create!(
+  name:     'Admin Metoda',
+  email:    'admin@metoda.com',
+  password: 'start123'
+)
+
+exit unless ENV['CREATE_DEV_APPS']
+
+user.applications.create!(
+  name:        'FS Development',
+  license_key: '0000-dev-fs-0000'
+)
