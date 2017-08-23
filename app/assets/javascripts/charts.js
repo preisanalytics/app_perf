@@ -117,7 +117,7 @@ $(function() {
 				remoteFetchData(element);
         turbolinksSetInterval(function() {
           remoteFetchData(element)
-        }, 5000);
+        }, 300000);
     };
 
     var plot = $.plot(element, data, options);
