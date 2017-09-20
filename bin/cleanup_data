@@ -13,6 +13,7 @@ Application.all.each do |application|
     application.events.delete_all
 
     application.error_data.where("created_at < ?", delete_time).delete_all
-
   end
 end
+
+Backtrace.where('created_at < ?', 24.hours.ago).delete_all
